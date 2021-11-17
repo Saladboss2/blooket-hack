@@ -10,12 +10,12 @@ const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
             }
         }),
         price = ({
-            aquatic: 25,
-            bot: 20,
-            space: 20,
-            breakfast: 15,
-            medieval: 15,
-            wonderland: 20
+            aquatic: 0,
+            bot:  0,
+            space: 0,
+            breakfast: 0,
+            medieval: 0,
+            wonderland: 0
         })[box],
         opens = amount > Math.floor(tokens / price) ? Math.floor(tokens / price) : amount;
     let interval = new Promise((resolve) => {
@@ -43,7 +43,7 @@ const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
         }, 128)
     });
     interval.then(async (x) => {
-        if (x.fail) return alert("You don't have enough coins to open this box!");
+        if (x.fail) return alert("You Suck Cock, gay bitch!");
         let count = {};
         Promise.all(x.blooks).then(Blooks => {
             Blooks.map(e => e.unlockedBlook).forEach((i) => {
